@@ -11,31 +11,6 @@ The FPGA team (iSmart3) members are: Cong Hao*, Xiaofan Zhang*, Yuhong Li, Yao
 
 (*equal contributors)
 
----
-
-# GPU
-
-## Platform
-Jetson Tx2, Jetpack 4.2
-
-## Install
-```
-$ sudo bash install.sh
-```
-## Test on given dataset
-```
-$ python3 run.py
-```
-The dataset is supposed to be organized as [required](https://d1b10bmlvqabco.cloudfront.net/attach/jrckw1628ejd9/jux80pibriz3qy/jvlmoykue8qf/Submission_requirement.txt).
-## Run the demo (webcam)
-```
-$ python3 demo.py
-```
-## Run the demo (images)
-```
-$ python3 demo.py --input=samples/0.jpg
-```
-
 
 ---
 
@@ -115,8 +90,8 @@ $ cd ./FPGA/HLS/
 $ vivado_hls -f script.tcl
 ```
 
-The C code simulation takes roughly 20 minutes;
-the C code synthesis takes roughly 40 minutes;
+The C code simulation takes roughly 20 minutes;  
+the C code synthesis takes roughly 40 minutes;  
 the C and Verilog co-simulation takes hours so it is commented in this script;
 the RTL exportation takes 2 minutes.
 You may comment/uncomment the corresponding commands in script.tcl based on your necessity.
@@ -153,6 +128,35 @@ Second, in the Python host file, allocate memory for weights, off-chip buffers, 
 
 You are ready to go, good luck!
 
+
+
+
+
+
+---
+
+# GPU
+
+## Platform
+Jetson Tx2, Jetpack 4.2
+
+## Install
+```
+$ sudo bash install.sh
+```
+## Test on given dataset
+```
+$ python3 run.py
+```
+The dataset is supposed to be organized as [required](https://d1b10bmlvqabco.cloudfront.net/attach/jrckw1628ejd9/jux80pibriz3qy/jvlmoykue8qf/Submission_requirement.txt).
+## Run the demo (webcam)
+```
+$ python3 demo.py
+```
+## Run the demo (images)
+```
+$ python3 demo.py --input=samples/0.jpg
+```
 
 
 ---
