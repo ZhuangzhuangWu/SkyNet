@@ -45,6 +45,10 @@ Finally it shows the total execution time (s) and energy consumption (J).
 
 
 To run the demo:
+(Edit 60 line in SkyNet.py);
+IMG_DIR = '/home/max/work/SkyNet/FPGA/Deploy/test_images/'
+
+
 
 ```
 $ cd ./FPGA/Deploy/
