@@ -44,13 +44,12 @@ Then it activates the SkyNet IP to execute the inference of input images, and ou
 Finally it shows the total execution time (s) and energy consumption (J).
 
 
-To run the demo:
-(Edit 60 line in SkyNet.py);
-IMG_DIR = '/home/max/work/SkyNet/FPGA/Deploy/test_images/'
-
-
+To run the demo:  
 
 ```
+(Edit 60 line in SkyNet.py)  
+  IMG_DIR = '/home/max/work/SkyNet/FPGA/Deploy/test_images/'
+
 $ cd ./FPGA/Deploy/
 $ sudo python3 SkyNet.py
 ```
