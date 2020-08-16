@@ -36,11 +36,13 @@ Cong Hao*, Xiaofan Zhang*, Yuhong Li, Yao Chen, Xingheng Liu, Sitao Huang, Ky
 ## Directly run the demo on the FPGA
 
 This example allows you to directly try our bitstream and weights by running over 16 test images,  
-stored in test_images from 0.jpg to 15.jpg.
+stored in test_images from 0.jpg to 15.jpg.  
 The images are processed with a batch size of 4.  
-The host code (SkyNet.py) runs on the embedded ARM core.
-It first loads the weight file (SkyNet.bin), and then loads the binary file (SkyNet.bit) to configure the FPGA program logic.
-Then it activates the SkyNet IP to execute the inference of input images, and outputs the coordinates of detected bounding boxes.
+The host code (SkyNet.py) runs on the embedded ARM core.  
+It first loads the weight file (SkyNet.bin),  
+and then loads the binary file (SkyNet.bit) to configure the FPGA program logic.  
+Then it activates the SkyNet IP to execute the inference of input images,  
+and outputs the coordinates of detected bounding boxes.  
 Finally it shows the total execution time (s) and energy consumption (J).
 
 
@@ -96,27 +98,26 @@ To deploy the SkyNet on FPGA, we go through three major steps:
 
 
 ### 1. Vivado HLS
-The C source code of SkyNet can be found in ./FPGA/HLS/ folder.
-There are typically four steps:
+The C source code of SkyNet can be found in ./FPGA/HLS/ folder.  
 
-1. C code simulation
-2. C code synthesis
-3. C and Verilog co-simulation
-4. Export RTL (Verilog/VHDL)
+There are typically four steps:
+  1. C code simulation (takes roughly 20 min.)
+  2. C code synthesis (takes roughly 40 min.)
+  3. C and Verilog co-simulation (takes roughly hours.)
+  4. Export RTL(Verilog/VHDL) (takes roughly 2 min.)
+
+  the C and Verilog co-simulation takes hours so it is commented in this script;
+  You may comment/uncomment the corresponding commands in script.tcl based on your necessity.
+  The output of this step is an exported HLS IP, written in Verilog.
+
 
 You may go through the Vivado HLS flow by running:
 ```
-$ cd ./FPGA/HLS/
-$ vivado_hls -f script.tcl
+  $ cd ./FPGA/HLS/
+  $ vivado_hls -f script.tcl
 ```
 
-The C code simulation takes roughly 20 minutes;  
-the C code synthesis takes roughly 40 minutes;  
-the C and Verilog co-simulation takes hours so it is commented in this script;
-the RTL exportation takes 2 minutes.
-You may comment/uncomment the corresponding commands in script.tcl based on your necessity.
 
-The output of this step is an exported HLS IP, written in Verilog.
 
 ### 2. Vivado
   In this step we integrate the generated HLS IP into the whole system,  
@@ -134,13 +135,18 @@ $ vivado -mode batch -source script.tcl -tclargs
    skynet($Your_Project_Name) ./($Path_To_Your_RTL_Project) ../HLS/model/solution1/impl/ip($Path_To_Your_HLS_Project)
 ```
 
-In this configuration, the Zynq processor works under 214MHz.
-Two high performance AXI buses from Zynq are connected to the m_axi ports of HLS IP, INPUT and OUTPUT respectively.
-(After running this script, the generation of bitstream (.bit) is not completed even though the script shows to be terminated. It takes 40 minutes to an hour for bitstream generation, and you may observe the progress in vivado GUI.)
+In this configuration, the Zynq processor works under 214MHz.  
+Two high performance AXI buses from Zynq are connected to the m_axi ports of HLS IP, INPUT and OUTPUT respectively.  
+(After running this script, the generation of bitstream (.bit) is not completed even though the script shows to be terminated.  
+ It takes 40 minutes to an hour for bitstream generation, and you may observe the progress in vivado GUI.)
 
 
 ### 3. Host
-After generating the bitstream, the final step is to finish the host code running in the processing system, in this case the embedded ARM core. Usually it is written in C, but in Ultra96 and Pynq Series, it allows us to write in Python. In this example we use Python.
+  After generating the bitstream, the final step is to finish the host code running in the processing system,  
+  in this case the embedded ARM core.  
+  Usually it is written in C, but in Ultra96 and Pynq Series, it allows us to write in Python.  
+  In this example we use Python.
+
 
 First, find the following three files to upload to the board (default name and path):
 
@@ -155,8 +161,8 @@ Remember to rename
 the .bit and .hwh file, .bin to **SkyNet.bit** and **SkyNet.hwh**,  **SkyNet.bin**     or anything but need to be the same.
 
 
-Second, in the Python host file, allocate memory for weights, off-chip buffers, load parameters, download the overlay (.bit)  
-to program the FPGA logic and specify the IP addresses.  
+Second, in the Python host file, allocate memory for weights, off-chip buffers, load parameters,  
+download the overlay (.bit) to program the FPGA logic and specify the IP addresses.  
 
 You may refer to the SkyNet.py in the ./FPGA/Deploy. 
 
