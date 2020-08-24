@@ -131,8 +131,8 @@ You may go through the Vivado flow by running:
 -> xilinx.com:ip:zynq_ultra_ps_e:3.3
 
 $ cd ./FPGA/RTL/
-$ vivado -mode batch -source script.tcl -tclargs 
-   skynet($Your_Project_Name) ./($Path_To_Your_RTL_Project) ../HLS/model/solution1/impl/ip($Path_To_Your_HLS_Project)
+$ vivado -mode batch -source script.tcl -tclargs skynet ./ ../HLS/model/solution1/impl/ip  
+  "skynet"($Your_Project_Name) "./"($Path_To_Your_RTL_Project) "../HLS/model/solution1/impl/ip"($Path_To_Your_HLS_Project)
 ```
 
 In this configuration, the Zynq processor works under 214MHz.  
