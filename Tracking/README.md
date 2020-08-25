@@ -8,6 +8,10 @@ $ bash make.sh
 ```
 to setup the environment.
 
+- install torch  [torch install](http://www.kwangsiklee.com/2018/08/ubuntu%EC%97%90%EC%84%9C-torch-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)  
+
+
+
 Follow the original code to setup datasets [Youtube-VOS](https://youtube-vos.org/dataset/), 
 [COCO](http://cocodataset.org/#download), 
 [ImageNet-DET](http://image-net.org/challenges/LSVRC/2015/), 
