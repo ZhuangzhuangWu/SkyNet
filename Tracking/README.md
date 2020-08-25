@@ -15,15 +15,18 @@ to setup the environment.
 
 
 
-Follow the original code to setup datasets [Youtube-VOS](https://youtube-vos.org/dataset/), 
-[COCO](http://cocodataset.org/#download), 
-[ImageNet-DET](http://image-net.org/challenges/LSVRC/2015/), 
-and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/) and train/test on them. 
+Follow the original code to setup datasets  
+[Youtube-VOS](https://youtube-vos.org/dataset/),  
+[COCO](http://cocodataset.org/#download),  
+[ImageNet-DET](http://image-net.org/challenges/LSVRC/2015/),  
+and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/) and train/test on them.  
+
 An example to train SkyNet on Youtube-VOS:
 ```
 python tools/train_siammask.py --config=config_skynet.json -b 32 -j 16 --epochs 60 --log logs/log.txt --save_dir=snapshot_sky
 ```
-To test on [GOT-10k](http://got-10k.aitestunion.com/) dataset, refer [test_got10k.py](./test_got10k.py).
+To test on [GOT-10k](http://got-10k.aitestunion.com/) dataset, refer [test_got10k.py](./test_got10k.py).  
+
 
 ## License
 Licensed under an MIT license.
