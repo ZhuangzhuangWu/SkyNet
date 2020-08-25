@@ -2,13 +2,13 @@ This part of code was adapted from [offical release of SiamMask](https://github.
 
 You may follow the **Environment setup** or run
 ```
-conda env create -f environment.yml
-conda activate sky
-bash make.sh
+$ conda env create -f environment.yml
+$ conda activate sky
+$ bash make.sh
 ```
 to setup the environment.
 
-Follow the original code to setup datasets [Youtube-VOS](https://youtube-vos.org/dataset/download/), 
+Follow the original code to setup datasets [Youtube-VOS](https://youtube-vos.org/dataset/), 
 [COCO](http://cocodataset.org/#download), 
 [ImageNet-DET](http://image-net.org/challenges/LSVRC/2015/), 
 and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/) and train/test on them. 
