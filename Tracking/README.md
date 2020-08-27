@@ -8,9 +8,9 @@ $ bash make.sh
 ```
 to setup the environment.
 
-- install torch  
+- install
   $ pip install torch torchvision  
-  
+  $ pip install tensorboardX
    
 
 
