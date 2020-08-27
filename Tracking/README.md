@@ -8,11 +8,12 @@ $ bash make.sh
 ```
 to setup the environment.
 
+```
 - install
   $ pip install torch torchvision  
   $ pip install tensorboardX
-   
-
+  $ pip install torchsummary 
+```
 
 
 Follow the original code to setup datasets  
