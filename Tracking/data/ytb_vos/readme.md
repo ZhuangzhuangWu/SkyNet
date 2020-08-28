@@ -5,7 +5,8 @@
 ````shell
 python download_from_gdrive.py https://drive.google.com/uc?id=18S_db1cFgSD1RsMsofJLkd6SyR9opk6a --output train.zip
 unzip ./train.zip
-python parse_ytb_vos.py  # really slow
+
+python parse_ytb_vos.py  # really slow  #<--  run this w/ pycharm debug
 ````
 
 ### Crop & Generate data info (10 min)
