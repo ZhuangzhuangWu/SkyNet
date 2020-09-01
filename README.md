@@ -79,8 +79,8 @@ You may go through the Vivado HLS flow by running:
 You may go through the Vivado flow by running:
 ```
 (edit  /FPGA/RTL/script.tcl)
--> em.avnet.com:ultra96v1:part0:1.2
--> xilinx.com:ip:zynq_ultra_ps_e:3.3
+-> em.avnet.com:ultra96v1:part0:1.2     ( for Ultra96 v1),,  v2:part0:1.0 for ultra96v2
+-> xilinx.com:ip:zynq_ultra_ps_e:3.3     (for above vivado 2019.1)
 
 $ cd ./FPGA/RTL/
 $ vivado -mode batch -source script.tcl -tclargs skynet ./ ../HLS/model/solution1/impl/ip  
