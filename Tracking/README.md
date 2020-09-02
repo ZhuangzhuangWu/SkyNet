@@ -31,6 +31,8 @@ to setup the environment.
   $ nvcc -V
   (install pytorch for cuda 7.5)
   $ conda install pytorch=0.4.1 cuda75 -c pytorch
+  (install pytorch for NON-GPU)
+  $ conda install pytorch torchvision cpuonly -c pytorch
 ```
 
 
