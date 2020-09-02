@@ -6,6 +6,17 @@ $ conda env create -f environment.yml
 $ conda activate sky
 $ bash make.sh
 ```
+```
+$ conda create -n sky python=3.6
+$ source activate sky
+$ pip install -r requirements.txt
+$ pip install Cython
+
+$ bash make.sh
+```
+
+
+
 to setup the environment.
 
 ```
@@ -17,7 +28,11 @@ to setup the environment.
 
 
 Follow the original code to setup datasets  
-[Youtube-VOS](https://youtube-vos.org/dataset/),  
+[Youtube-VOS](https://youtube-vos.org/dataset/),
+```
+
+```
+
 [COCO](http://cocodataset.org/#download),  
 [ImageNet-DET](http://image-net.org/challenges/LSVRC/2015/),  
 and [ImageNet-VID](http://image-net.org/challenges/LSVRC/2015/) and train/test on them.  
