@@ -25,6 +25,7 @@ to setup the environment.
   $ pip install torch torchvision  
   $ pip install tensorboardX
   $ pip install torchsummary
+  $ pip install utils
   
   (install pytorch for cuda 7.5)
   $ conda install pytorch=0.4.1 cuda75 -c pytorch
