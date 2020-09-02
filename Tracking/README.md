@@ -24,12 +24,17 @@ to setup the environment.
   $ pip install opencv-contrib-python
   $ pip install torch torchvision  
   $ pip install tensorboardX
-  $ pip install torchsummary 
+  $ pip install torchsummary
+  
+  (install pytorch for cuda 7.5)
+  $ conda install pytorch=0.4.1 cuda75 -c pytorch
 ```
 
 
 Follow the original code to setup datasets  
 [Youtube-VOS](https://youtube-vos.org/dataset/),
+[install YouTube-VOS](https://github.com/maxpark/SkyNet/tree/master/Tracking/data/ytb_vos)
+
 ```
 
 ```
