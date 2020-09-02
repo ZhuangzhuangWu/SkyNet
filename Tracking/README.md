@@ -8,6 +8,7 @@ $ bash make.sh
 ```
 ```
 $ conda env list
+$ conda env remove -n xxxx
 
 $ conda create -n sky python=3.6
 $ source activate sky
