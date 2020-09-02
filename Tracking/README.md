@@ -21,6 +21,7 @@ to setup the environment.
 
 ```
 - install
+  $ pip install opencv-contrib-python
   $ pip install torch torchvision  
   $ pip install tensorboardX
   $ pip install torchsummary 
