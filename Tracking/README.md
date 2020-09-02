@@ -7,6 +7,8 @@ $ conda activate sky
 $ bash make.sh
 ```
 ```
+$ conda env list
+
 $ conda create -n sky python=3.6
 $ source activate sky
 $ pip install -r requirements.txt
